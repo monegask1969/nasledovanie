@@ -3,7 +3,7 @@ package com.company;
 /**
  * Created by uitschool JV on 1/23/2016.
  */
-public class Student {
+public class Student implements Cloneable{
     private String fullName;
     private int age;
     private int id =71;
@@ -32,11 +32,16 @@ public class Student {
     }
     public Student(String fullName, int age)
     {
+        this.id=id;
         this.fullName=fullName;
         this.age=age;
     }
     public String toString()
     {
         return fullName + " " + age;
+    }
+
+    public Object clone(Object a) throws CloneNotSupportedException {
+        return super.clone();
     }
 }
